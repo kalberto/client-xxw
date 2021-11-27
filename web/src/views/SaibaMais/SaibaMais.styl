@@ -1,0 +1,152 @@
+// saibaMais
+
+// Transicao formularios
+.formularios-enter-active, .formularios-leave-active
+	transition all .5s ease
+
+.formularios-enter, .formularios-leave-to
+	opacity 0; visibility hidden
+
+#saibaMais
+	min-height 100vh; height 100vh; overflow hidden; display flex; align-items center; justify-content center;
+	flex-flow row wrap; 
+	img
+		-webkit-user-drag: none; user-select none
+	.modelo, .access, .sucesso
+		transition all .5s ease;
+	.access
+		position fixed; top 35px; right: 35px; display flex; gap 20px
+		.login
+			a
+				border 2px solid $dourado2; font-size rem(18); line-height 1; letter-spacing letterSpacing(-25);
+				padding 15px 45px; cursor pointer; display inline-block; text-decoration none; color #111
+				transition all 1s ease
+				&:hover
+					box-shadow inset 0 0 10px rgba($dourado3, .75)
+	.relacionamento
+		width percentage(615 / 1920); cursor pointer
+	.modelo
+		height percentage(889 / 1080); margin-top percentage(30 / 1080)
+	.vantagens
+		width 100%; display flex; align-items center; justify-content center;
+		li
+			position relative; width 190px; display flex; align-items center;
+			.extra
+				position absolute; bottom calc(100% + 20px); width 300px; padding 20px; background #fff;
+				left 50%; transform translateX(-50%); opacity 0; visibility hidden;
+				transition all 0.2s ease-in-out
+				p
+					color #687383; line-height rem(25); font-size rem(18)
+				&:before
+					content ''; width: 0; height: 0; border: 0 solid transparent; border-left-width: 17px; border-right-width: 17px; border-top: 17px solid #fff;
+					position absolute; top 100%; left 50%; transform translateX(-50%);
+			p
+				margin-left 10px; color #121341;
+			&:hover
+				.extra
+					opacity 1; visibility visible
+	.sucesso
+		margin-left -40px;
+		.saibamais
+			text-align right; margin-top 30px
+			a
+				font-size rem(18); line-height 1; letter-spacing letterSpacing(-25); line-height vw(70)
+				cursor pointer; display inline-block; text-decoration none; color #fff;
+				background linear-gradient(120deg, $dourado2, $dourado3, darken($dourado3, 15)); 
+				background-size 200% 100%; transition all 1s ease
+				max-width 280px; width 100%; text-transform uppercase; text-align center;
+				&:hover
+					background-position 100%
+		.distribuidor
+			text-align right;
+			margin-top 20px;
+			a
+				font-size rem(18); line-height 1; letter-spacing letterSpacing(-25); line-height vw(70)
+				cursor pointer; display inline-block; text-decoration none; color $dourado3; border 2px solid $dourado3;
+				background transparent; max-width 280px; width 100%; text-transform uppercase; text-align center;
+				transition all 0.5s ease; box-shadow 0 0 10px 2px transparent
+				&:hover
+					box-shadow 0 0 10px 2px rgba(#000, 0.2)
+
+		h2
+			font-family: americane-condensed, sans-serif; font-size vw(162); line-height .9; 
+			font-weight $font-regular; text-transform uppercase; color $dourado3
+			span
+				font-family inherit; font-size vw(40); color $azul; letter-spacing letterSpacing(200); 
+				display block; text-transform none; line-height 1
+				&.right
+					text-align right
+			@supports (-webkit-text-fill-color: transparent)
+				background linear-gradient(to right, $dourado2, $dourado3);	-webkit-background-clip text; 
+				-webkit-text-fill-color transparent;
+				span
+					-webkit-text-fill-color $azul
+
++desktop-1366()
+	#saibaMais
+		.vantagens
+			li
+				.extra
+					p
+						font-size rem(16); line-height rem(24)
+				&:first-child
+					.extra
+						left 80%
+				&:last-child
+					.extra
+						left 20%
+
+
++tablet-768()
+	#saibaMais
+		justify-content center; position relative;
+		.relacionamento
+			margin-top 15%;	max-width 500px; width 100%;
+			&.login-mobile
+				margin-top 8%; max-width 450px;
+			&.cadastro
+				margin-top 5%; max-width 300px;
+		.sucesso
+			order 2; margin-left 0; max-width 500px; width 100%;
+			h2
+				font-size rem(80); width 230px; margin 0 0 0 auto;
+				span
+					font-size rem(40)
+			.saibamais, .distribuidor
+				text-align center; 
+				a
+					line-height rem(50)
+		.vantagens
+			order 3; flex-flow row wrap; margin-top 70px
+			li
+				margin-bottom 20px;
+				.extra
+					width 190px; padding 10px
+					&:first-child, &:last-child
+						left 50%;
+		.modelo
+			display none
+			order 4; position absolute; bottom -50%
+
++iphone-pro-max()
+	#saibaMais
+		padding 0 40px; overflow-y scroll
+		.relacionamento
+			margin-top 30%;
+		.vantagens
+			li
+				.extra
+					width 300px
+		.sucesso
+			order 2; margin-left 0;
+			h2
+				font-size rem(60); margin 0 15px 0 auto;
+				span
+					font-size rem(30)
+			.saibamais
+				text-align center; margin-top 20px
+		.access
+			top 20px; right 20px; gap 10px
+			.login
+				a
+					padding 15px 10px;

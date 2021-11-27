@@ -1,0 +1,85 @@
+// Home
+
+#faq
+	min-height 100vh;
+	#filtro
+		position fixed; left 0; top 0
+	.container
+		width 100%; padding 50px
+	h2
+		color #20334d; font-size rem(31); line-height rem(31); font-weight $font-medium; text-align center;
+		margin-bottom 10px
+	p
+		color #20334d; font-size rem(14); line-height rem(16); margin-bottom 40px; text-align center;
+	ul
+		padding 30px 50px 30px;
+		li
+			background #fff; position relative; padding 15px vw(200); margin-bottom 15px
+			h3
+				text-align center; color #20334d; font-size rem(14); font-weight $font-bold;
+			p
+				font-size rem(16); line-height rem(24); color #4e5b6e; text-align center;
+				max-height 0; overflow hidden; transition all 0.5s ease-in-out; margin-bottom 0px; 
+			&:before
+				content ''; background url('~@images/icons/arrow-down.png') no-repeat; position absolute; right 20px; top 50%; transform translateY(-50%); 
+				width 10px; height 5px; transition all 0.5s ease-in-out
+			&.ativo
+				&:before
+					transform translateY(-50%) scaleY(-1); 
+				p
+					max-height 300px; margin-top 15px
+	form
+		max-width 600px; width 100%; margin 40px auto 0;
+		.group
+			display flex; justify-content space-between; margin-bottom 30px
+			._50
+				flex-shrink: 0; width 49%;
+			._100
+				width 100%; flex-shrink 0;
+			.input
+				padding 20px; border 1px solid #f5ead7; background #fff; position relative;
+				span
+					font-size rem(14); color #800000; position absolute; right 0; bottom -18px;
+				textarea, input
+					border 0; background transparent; width 100%; outline 0
+					&::placeholder
+						text-transform uppercase; color #444444
+				select
+					width 100%; border 0; background transparent;
+					font-size rem(14); font-weight $font-bold;
+					outline 0; text-transform uppercase; 
+				textarea
+					resize: none; height 150px;
+		.enviar
+			text-align right;
+			button
+				color #be8f4d; text-transform uppercase; font-weight $font-bold; font-size rem(14);
+				letter-spacing letterSpacing(30)
+			
+
++desktop-1680()
+	#faq
+		padding-left 0px
+
++tablet-1024()
+    #faq
+        .selo
+            display none
+
++mobile-600()
+	#faq
+		.container
+			padding 0
+		ul
+			li
+				&.ativo
+					p
+						max-height 200vh; transition none
+		form
+			padding 0 50px 80px
+			.group
+				flex-flow row wrap; margin-bottom 0
+				._50
+					width 100%;
+				.input
+					margin-bottom 20px;

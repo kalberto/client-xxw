@@ -1,0 +1,98 @@
+// Posts
+
+#posts
+    min-height 100vh; display flex;
+    .container
+        padding vw(100) 20px vw(60); width 100%; 
+    h1
+        display none;
+    h2
+        color $azul; font-size rem(30); max-width 550px; margin 0 auto; text-align center; line-height rem(31);
+        font-weight: $font-medium; width 100%; margin-bottom vw(80)
+    ul
+        display flex; align-items center; justify-content flex-start; max-width 1380px; flex-flow row wrap; margin 0 auto 60px
+        li
+            max-width 329px; width 100%; position relative; height 212px; cursor pointer; overflow hidden
+            margin 0 7px 14px;
+            &.post
+                .texto
+                    background linear-gradient(to right, rgba(#cbaf89, 0.9), rgba(#ad8244, 0.9));
+            &.evento
+                .texto
+                    background $azul;
+                &:hover
+                    .texto
+                        height 207px;
+                        .input
+                            top auto; bottom 15px; left 50%; transform translateX(-50%);
+                            width 90%; text-align center;
+                            span
+                                display inline-block; margin-left 15px; line-height rem(18)
+
+            .img
+                img
+                    width 100%;
+            .texto
+                padding 20px; width 324px; position absolute; bottom 2px; 
+                left 2px; transition all 0.3s ease-in-out; height 70px
+                .input
+                    position absolute; top 5px; right 7px;
+                    label
+                        display inline-block; width 18px; height 18px; background #fff; transition all 0.2s ease-in-out; border-radius 3px;
+                        vertical-align: middle;
+                        &.confirmado
+                            background:#000000;
+                    input
+                        display none;
+                    span
+                        display none; color #fff; font-size rem(15); vertical-align middle
+
+                    input:checked + label
+                        background transparent; 
+                h3
+                    color #fff; font-size rem(16); line-height rem(19); font-weight $font-regular
+                p
+                    color #fff; font-size rem(12); line-height rem(19); text-transform uppercase;
+
++desktop-1680()
+    #posts
+        .container
+            width 100%
+
++desktop-1366()
+    #posts
+        ul
+            justify-content: center
+            li
+                margin 0 7px 14px;
++tablet-1024()
+    #posts
+        .selo
+            display none
+
++tablet-768()   
+    #posts
+        h2
+            margin-bottom 70px
+
++mobile-600()
+    #posts
+        ul
+            li
+                margin 0 0 14px
+
++iphone-pro-max()
+    #posts
+        padding 50px 45px
+        h1
+            display block; font 0/0 a
+        h2
+            font-size rem(16); line-height rem(24); margin 15px 0 25px
+        ul
+            li
+                .img
+                    overflow hidden
+                    img
+                        max-width 100%; width auto; margin 0 auto;
+                .texto
+                    width 100%; bottom 0; left 0

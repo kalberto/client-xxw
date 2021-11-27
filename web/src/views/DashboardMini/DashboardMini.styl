@@ -1,0 +1,99 @@
+// Home
+
+#dashboardMini
+	min-height 100vh;
+	#filtro
+		position fixed; left 0; top 0
+	.container
+		display flex; align-items center; justify-content center; padding 50px;
+		.resultado
+			h2
+				margin 0 auto 0 60px; font-size rem(36); line-height rem(36); color #121341; font-weight $font-medium;
+			p
+				margin 10px 0 40px 60px;; color rgba(#252860, 0.7);display flex; align-items center;
+				img
+					height: 16px; margin-right 10px;
+			table
+				border-collapse: collapse;
+				tr
+					&:not(:last-child)
+						td
+							border-bottom 1px solid rgba(#000, 0.4);
+					td
+						color rgba(#252860, 0.7); font-size rem(20); line-height 30px
+						padding 20px vw(60);
+						&:not(:last-child)
+							border-right 1px solid rgba(#000, 0.4)
+		.grafico
+			margin-right vw(100)
+			.meta, .realizado
+				display flex; margin-bottom 10px; align-items center;
+				i
+					display block; flex-shrink 0; width 30px; height 30px; border-radius 50%; margin-right 10px
+				p
+					color rgba(#252860, 0.7); font-size rem(20); line-height 30px
+			.meta
+				i
+					background #bd8e4d
+				p
+					span
+						color #bd8e4d
+			.realizado
+				i
+					background #252860
+				p
+					span
+						color #252860
+			.svg
+				position relative;
+				.valor
+					position absolute; top 50%; left 50%; transform translate(-50%, -50%)
+					color rgba(#252860, 0.7); font-size rem(30); font-weight $font-bold
+		svg
+			width 350px; height 350px; display: block;
+			.circle-bg
+				stroke-width: 4.8; stroke:#bd8e4d; fill: none;
+			.circle
+				stroke-width: 4.8; stroke-dasharray: 60, 100; stroke:#252860; fill: none;
+	button, a
+		display block; margin 0px auto 80px; width 270px; text-align center; line-height rem(70); color #bd8e4d
+		font-size rem(16); font-weight $font-bold; border 2px solid #bd8e4d; text-decoration none; cursor pointer;
+
+
++tablet-1024()
+    #dashboardMini
+        .selo
+            display none
+
++tablet-768()
+	#dashboardMini
+		.container
+			flex-flow row wrap; justify-content center; padding 50px 20px;
+			.grafico
+				margin-right 0;
+			.resultado
+				width 100%;
+				h2
+					margin 20px 0; text-align center;
+				table
+					margin 0 auto
+
++iphone-pro-max()
+	#dashboardMini
+		.container
+			.grafico
+				svg
+					width 300px; height 300px
+			.resultado
+				table
+					tr
+						display flex; flex-direction column;
+						&:not(:last-child)
+							td
+								border-bottom 0 solid rgba(#000, 0.4);
+						td
+							padding 10px
+							&:not(:last-child)
+								border-right 0
+							&:last-child
+								border-bottom 1px solid rgba(#000, 0.4);

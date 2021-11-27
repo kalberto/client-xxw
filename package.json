@@ -1,0 +1,48 @@
+{
+	"private": true,
+	"scripts": {
+		"dev": "npm run development",
+		"development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "npm run development -- --watch",
+		"watch-poll": "npm run watch -- --watch-poll",
+		"hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"prod": "npm run production",
+		"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+	},
+	"devDependencies": {
+		"axios": "^0.21.1",
+		"bootstrap": "^4.6.0",
+		"bootstrap-sass": "^3.4.1",
+		"cross-env": "^5.2.1",
+		"fs-extra": "^7.0.1",
+		"jquery": "^3.5.1",
+		"jquery-datetimepicker": "^2.5.20",
+		"jstransformer-stylus": "^1.5.0",
+		"laravel-mix": "^4.1.4",
+		"laravel-mix-blade-pug": "^1.0.5",
+		"laravel-mix-pug": "^0.3.0",
+		"lodash": "^4.17.21",
+		"popper.js": "^1.16.1",
+		"pug": "^2.0.4",
+		"pug-plain-loader": "^1.1.0",
+		"resolve-url-loader": "^2.3.1",
+		"sass": "^1.32.6",
+		"sass-loader": "^7.3.1",
+		"stylus": "^0.54.5",
+		"stylus-loader": "^3.0.2",
+		"trumbowyg": "^2.23.0",
+		"vue": "^2.6.12",
+		"vue-quill-editor": "^3.0.6",
+		"vue-router": "^3.5.1",
+		"vue-select": "^3.11.2",
+		"vue-template-compiler": "^2.6.12",
+		"vue-the-mask": "^0.11.1",
+		"vue-trumbowyg": "^3.6.2"
+	},
+	"dependencies": {
+		"@babel/polyfill": "^7.12.1",
+		"v-money": "^0.8.1",
+		"vue-moment": "^4.1.0",
+		"vue-resource": "^1.5.3"
+	}
+}

@@ -1,0 +1,118 @@
+// 
+// Estilos gerais
+// 
+
+body, html
+	overflow-x hidden; background #fff;
+
+figure
+	margin 0; padding 0; width 100%; height auto;
+	img
+		width 100%;
+
+picture
+	img
+		width 100%;
+
+.ta-center 
+	text-align center;
+
+.ta-right 
+	text-align right;
+
+.ta-left
+	text-align left;
+
+// 
+// Flex
+// 
+.flex
+	display flex;
+
+.jc-start
+	justify-content flex-start;
+.jc-end
+	justify-content flex-end;
+.jc-center
+	justify-content center;
+.jc-around
+	justify-content space-around;
+.jc-between
+	justify-content space-between;
+
+.ff-rw
+	flex-flow row wrap;
+.ff-rnw
+	flex-flow row nowrap;
+.ff-cw
+	flex-flow column wrap;
+.ff-cnw
+	flex-flow column nowrap;
+
+.as-start
+	align-self flex-start;
+.as-end
+	align-self flex-end;
+.as-center
+	align-self center;
+
+.ai-start
+	align-items flex-start;
+.ai-end
+	align-items flex-end;
+.ai-center
+	align-items center;
+
+// 
+// Grid
+// 
+.grid
+	display flex;
+	&._9
+		> *
+			flex 0 1 33%; max-width 33%
+		.tl
+			justify-content flex-start;
+			> *
+				align-self flex-start;
+		.tc
+			justify-content center;
+			> *
+				align-self flex-start;
+		.tr
+			justify-content flex-end;
+			> *
+				align-self flex-start;
+		.cl
+			justify-content flex-start;
+			> *
+				align-self center;
+		.cc
+			justify-content center;
+			> *
+				align-self center;
+		.cr
+			justify-content flex-end;
+			> *
+				align-self center;
+		.bl
+			justify-content flex-start;
+			> *
+				align-self flex-end;
+		.bc
+			justify-content center;
+			> *
+				align-self flex-end;
+		.br
+			justify-content flex-end;
+			> *
+				align-self flex-end;
+// 
+// Gerais
+// 
+.wrapper
+	position: relative; max-width $max-size; margin 0 auto; padding: 0 15px; box-sizing border-box; clearfix();
+
+main	
+	> section
+		padding 10px 0;

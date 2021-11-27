@@ -1,0 +1,78 @@
+#avisoNivel
+	.container
+		height 90vh; margin-top -18vh;padding 0 50px 0 50px; overflow-y hidden; display flex; align-items center; justify-content center;
+		img
+			-webkit-user-drag: none; user-select none;
+		.background
+			background-color #FFFFFF;position absolute;width vw(1025);height vh(790);right vw(50);border-radius 7px;
+		.aviso
+			width vw(480);
+			h2
+				margin 0 auto 40px 60px; font-size vh(36); line-height vh(36); color #121341; font-weight $font-medium; text-transform uppercase;
+			p
+				margin 0 auto 40px 60px; color #121341;
+			.continuar
+				text-align center;
+				a
+					font-size rem(18); line-height 1; letter-spacing letterSpacing(-25); padding 15px 50px;
+					cursor pointer; display inline-block; text-decoration none; color #fff;
+					background linear-gradient(120deg, $dourado2, $dourado3, darken($dourado3, 15));
+					background-size 200% 100%; transition all 1s ease
+					&:hover
+						background-position 100%
+			button
+				background linear-gradient(to right, rgba(#cbaf89, 0.9), rgba(#ad8244, 0.9), rgba(#ad8244, 0.9), rgba(#cbaf89, 0.9));
+				background-size 200%; background-position left center; display block; cursor pointer; transition all 0.5s ease-in-out
+				min-width: 180px;width vw(250); margin 30px auto 0; line-height rem(60); color #fff; font-size rem(15); font-weight $font-bold
+				&:hover
+					background-position 100%
+		.modelo
+			position relative;flex-shrink 0; height percentage(889 / 1080); margin-top percentage(30 / 1080);
+		.images
+			width: vw(740);height vh(482); position: relative;display: flex; flex-direction: column;align-content: center; justify-content: center; align-items: center;
+			.selo
+				max-height: vh(358); position: relative;
+				img
+					&.currentSelo
+						position: relative; max-width: max-content;
+					&.oldSelo
+						width:80%; position: absolute; top:30%; left:50%; transform:translate(-50%,0); filter: blur(4px);-webkit-filter: blur(4px);
+			.upgrade
+				width:vw(96); display: flex; margin-top vh(96); justify-content center;align-items center; gap 20%;
+
++desktop-1366()
+	#avisoNivel
+		.container
+			height 82vh; margin-top -15vh;
+
++desktop-1024()
+	#avisoNivel
+		.container
+			height 75vh; margin-top -5vh;
+
++tablet-768()
+	#avisoNivel
+		flex-direction column; justify-content flex-start; position relative;
+		.container
+			height 100vh;flex-direction column-reverse;
+			.background
+				display none;
+			.aviso
+				width 100%;
+			.modelo
+				display none;
+			.images
+				width 100%;height 50%;
+				.upgrade
+					display none;
+
++mobile-600()
+	#avisoNivel
+		.container
+			 margin-top -8vh;
+
++iphone-pro-max()
+	#avisoNivel
+		padding 0 0
+		.container
+			padding-left 0; padding-right 0;

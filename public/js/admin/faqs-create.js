@@ -1,0 +1,1 @@
+var app=new Vue({el:"#app",mixins:[main_mixin,create_mixin,message_mixin,faq_mixin],data:{},mounted:function(){this.init()},methods:{init:function(){this.initParent()},createRegistro:function(){this.create("/admin/api/faqs",!0)}}});

@@ -1,0 +1,1 @@
+var app=new Vue({el:"#app",mixins:[main_mixin,media_mixin,create_mixin,message_mixin,asset_mixin],data:{},methods:{createAsset:function(){var e=this,i=new FormData;Object.keys(this.registro).forEach(function(a){return i.append(a,e.registro[a])}),this.create("/admin/assets/salvar",!0,i)}}});

@@ -1,0 +1,87 @@
+// Filtro
+
+#filtro
+	width 380px; height 100vh; background $bege
+	h1
+		font 0/0 a; background #fff; padding 45px 20px
+	.button
+		button
+			display none
+	.filtro
+		.selo
+			display none
+		p
+			font-size rem(14); color $azul; text-align center; margin-bottom 30px
+		form
+			padding 40px 40px 0
+			.group
+				display flex; align-items center; justify-content space-between; margin-bottom 20px
+				.input
+					label
+						display block; font-size rem(14);
+						font-weight $font-bold; color $dourado
+					select
+						width 100%; border 1px solid $dourado; background #fff;
+						padding 10px 15px; font-size rem(14); font-weight $font-bold;
+						color $cinza
+					&._50
+						width 48%
+					&._100
+						width 100%
+			button 
+				background linear-gradient(to right, rgba(#cbaf89, 0.9), rgba(#ad8244, 0.9), rgba(#ad8244, 0.9), rgba(#cbaf89, 0.9)); 
+				background-size 200%; background-position left center; display block; cursor pointer; transition all 0.5s ease-in-out
+				width 250px; margin 30px auto 0; line-height rem(60); color #fff; font-size rem(15); font-weight $font-bold
+				&:hover
+					background-position 100%
+		a
+			color $cinza; font-size rem(18); display block; text-align center; text-decoration none;
+			margin-top 20px
+			&.pagina
+				max-width 250px; margin 20px auto; color #fff; text-transform uppercase; font-size rem(15); line-height 45px;
+				color #fff; font-weight $font-bold; background #121341; 
+
++desktop-1680()
+	#filtro
+		position: fixed; top 0; left 0; z-index 2; width auto; height 100vh;
+		.filtro
+			width 0; overflow hidden; transition all 0.2s ease-in-out;
+		.button
+			position absolute; top 0; left 0; width 38px; height 100vh; background #fffbf5; z-index 3
+			button
+				position relative; width 100%; height 100%; display block; height 35px;
+				i
+					background #c29557; display block; height 2px; position absolute;
+					left 3px; transition all 0.2s ease-in-out
+					&.first
+						width 32px; top 10px
+					&.second
+						width 25px; top 18px
+					&.third
+						width 7px; top 26px
+		&.ativo
+			.filtro
+				width 380px; 
+			.button
+				height 35px
+				button
+					i
+						&.second
+							transform: translateX(3px)
+						&.third
+							transform: translateX(12px)
+
++desktop-1366()
+    #filtro
+        &.ativo
+            overflow-y: scroll; overflow-x hidden
+
++tablet-1024()
+	#filtro
+		h1
+			display none;
+		.filtro
+			form
+				padding 20px 40px 0
+			.selo
+				display flex

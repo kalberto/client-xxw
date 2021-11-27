@@ -1,0 +1,1 @@
+var app=new Vue({el:"#app",mixins:[main_mixin,create_mixin,message_mixin,meta_trimestre_mixin],mounted:function(){this.init()},data:{},methods:{init:function(){this.initParent()},createRegistro:function(){this.create("/admin/api/metas-trimestre",!0)}}});

@@ -1,0 +1,40 @@
+// Paginacao
+
+#paginacao
+    display flex; align-items center; justify-content center;
+    ul
+        display flex; align-items center; justify-content center;
+        li
+            margin 0 10px; cursor pointer
+            i
+                display block; background #ecd4b2; width 7px; height 7px; border-radius 50px; transition all 0.5s ease
+            &.ativo, &:hover
+                i
+                    width 33px
+    button
+        display flex; align-items center; justify-content center; cursor pointer
+        &:disabled
+            opacity .6; cursor default; pointer-events none
+        span
+            color $marrom; text-transform uppercase; font-size rem(14); letter-spacing letterSpacing(-20)
+            font-weight $font-medium
+        &.back
+            margin-right 40px
+            img
+                margin-right 30px;
+        &.next
+            margin-left 40px
+            img
+                margin-left 30px; transform scale(-1)
+
++mobile-600()
+    #paginacao
+        button
+            &.back
+                margin-right 15px;
+                img
+                    margin-right 10px;
+            &.next
+                margin-left 15px;
+                img
+                    margin-left 10px;

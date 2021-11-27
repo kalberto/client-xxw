@@ -1,0 +1,1 @@
+var app=new Vue({el:"#app",mixins:[main_mixin,create_mixin,errors_mixin,message_mixin,media_mixin,conteudo_mixin],data:{},methods:{createConteudo:function(){this.create("/admin/api/conteudos",!0)}}});

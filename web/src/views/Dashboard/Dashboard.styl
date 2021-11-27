@@ -1,0 +1,132 @@
+// Home
+
+#dashboard
+	min-height 100vh;
+	h2
+		margin 0 auto 20px; font-size rem(36); line-height rem(36); color #121341; font-weight $font-medium;
+		text-align center;
+	.container
+		display flex; align-items flex-start; justify-content center; gap 50px; padding 10px 50px;
+		.resultados
+			background #fff; max-width 350px; width 100%; padding 25px 50px
+			.resultado
+				width 100%; border-bottom 1px solid rgba(#0e1a35, 0.3)
+				h4
+					font-size rem(20); color #0e1a35; text-transform uppercase; margin-bottom 15px
+				.valores
+					display flex; align-items center; justify-content space-between;
+					margin-bottom 8px
+					span
+						font-size rem(14)
+						&.head
+							color #8492af; text-transform uppercase;
+						&.valor
+							color #0e1a35
+		.pageList
+			max-width 350px; width 100%;
+			select
+				width 100%; border 1px solid $dourado; background #fff;
+				padding 10px 15px; font-size rem(14); font-weight $font-bold;
+				color $cinza; margin-bottom 35px;
+			.listaData
+				width 100%; height 240px; overflow-y overlay; overflow-x hidden;
+				background #fff;
+				&::-webkit-scrollbar
+					width: 5px; height 5px;
+				&::-webkit-scrollbar-track
+					background rgba($dourado, .25); border-radius 50px;
+				&::-webkit-scrollbar-thumb
+					background $dourado; border-radius 50px
+				li
+					padding 15px 30px; border-bottom 1px solid rgba(#0e1a35, 0.3)
+					button
+						color #0e1a35; font-size rem(20); opacity 0.7; transition all 0.5s ease-in-out
+						text-transform uppercase; cursor pointer
+					&.ativo, &:hover
+						button
+							opacity 1
+		.graficos
+			display flex;
+			.grafico
+				margin-bottom vh(50); margin-left 50px
+				.meta, .realizado
+					display flex; margin-bottom 10px; align-items center;
+					i
+						display block; flex-shrink 0; width 30px; height 30px; border-radius 50%; margin-right 10px
+					p
+						color rgba(#252860, 0.7); font-size rem(20); line-height 30px
+				.meta
+					i
+						background #bd8e4d
+					p
+						span
+							color #bd8e4d
+				.realizado
+					i
+						background #252860
+					p
+						span
+							color #252860
+				.svg
+					position relative;
+					.valor
+						position absolute; top 50%; left 50%; transform translate(-50%, -50%)
+						color rgba(#252860, 0.7); font-size rem(30); font-weight $font-bold
+				button, a
+					display block; margin 50px auto 0; width 270px; text-align center; line-height rem(70); color #bd8e4d
+					font-size rem(16); font-weight $font-bold; border 2px solid #bd8e4d; text-decoration none; cursor pointer;
+		svg
+			width 200px; height 200px; display: block; margin 0 auto
+			.circle-bg
+				stroke-width: 4.8; stroke:#bd8e4d; fill: none;
+			.circle
+				stroke-width: 4.8; stroke-dasharray: 60, 100; stroke:#252860; fill: none;
+		.bars
+			width 70%;
+
+
++tablet-1024()
+	#dashboard
+		flex-flow row wrap;
+		.selo
+			display none
+
++tablet-768()
+	#dashboard
+		.container
+			flex-flow row wrap; justify-content center; padding 50px 20px;
+			.graficos
+				margin 30px 0; width 100%; justify-content space-around;
+				.grafico
+					margin-left 00px
+			.resultado
+				width 100%;
+				h2
+					margin 20px 0; text-align center;
+				table
+					margin 0 auto
+
++iphone-pro-max()
+	#dashboard
+		.container
+			.graficos
+				margin 80px 0; width 100%; justify-content space-between; flex-flow row wrap;
+				.bars
+					width 310px
+				.grafico
+					margin-left 00px
+					svg
+						width 300px; height 300px
+			.resultado
+				table
+					tr
+						display flex; flex-direction column;
+						&:not(:last-child)
+							td
+								border-bottom 0 solid rgba(#000, 0.4);
+						td
+							padding 10px
+							&:not(:last-child)
+								border-right 0
+							&:last-child
+								border-bottom 1px solid rgba(#000, 0.4);

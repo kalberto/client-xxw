@@ -1,0 +1,47 @@
+// 
+// Forms
+// 
+
+form
+    display flex; flex-flow row wrap; 
+    .form-group
+        position relative; padding 5px 10px; background rgba(#fff, .40); 
+        border-radius 5px; flex-basis auto; flex-grow 1; flex-shrink 1;
+        &._1
+            flex-basis 15%;
+        &._2
+            flex-basis 35%;
+        &._3
+            flex-basis 50%;
+        &._4
+            flex-basis 100%;
+        i
+            display inline-block;
+            &.input_nome
+                margin-left 3px;
+                + input
+                    margin-left 11px;
+            &.input_mail
+                margin-left 1px;
+                + input
+                    margin-left 9px;
+        label
+            display: none; visibility hidden; opacity 0;
+        input
+            border none; background none; height 30px; color $preto-coamo; outline 0; font-family "Lato", "Lucida Grande", Tahoma, sans-serif;
+            &::placeholder
+                color rgba(#3d3d3d, .70)
+
+        &:first-child()
+            margin-left: 0;
+        &:last-child()
+            margin-right: 0;
+
+    &.busca
+        button
+            border none; background none; line-height 1; padding 0 0; vertical-align middle; cursor pointer; outline 0;
+            // padding 9.5px 11px; font-weight $font-medium; line-height 19px; color $vermelho-coamo; text-transform uppercase; 
+            // border none; border-radius 5px; box-shadow 0 3px 16px rgba(#000, .16);  emsize(15)
+
+        &.button
+            background none; padding 1px 0; flex-grow 0;

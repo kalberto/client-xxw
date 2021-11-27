@@ -1,0 +1,105 @@
+// Lista vpc
+
+#listaVpc
+	min-height 100vh
+	.container
+		padding 25px 30px; background #fff; border 1px solid rgba($dourado3, 0.5); max-width 90%; margin 0 auto 70px; width 100%;
+		.new
+			display block; color #fff; text-transform uppercase; margin 0 0 20px auto
+			text-align center; font-weight $font-bold; line-height rem(38); width 240px; font-size rem(14);
+			text-decoration none; border-radius 5px; transition all 0.5s ease-in-out; background $dourado2;
+		table
+			width 100%; border-collapse: collapse;
+			tr
+				width 100%;
+				&:hover
+					td
+						opacity: 1
+				&.head
+					td
+						color #0e1a35; text-transform uppercase; font-size rem(20); opacity 0.7
+				&:not(:last-child)
+					td
+						border-bottom 1px solid rgba(#0e1a35,0.5)
+				td
+					padding vw(20) vw(50); font-size rem(18); opacity 0.7; color #0e1a35;
+
+					&:not(:last-child)
+						border-right 1px solid rgba(#0e1a35,0.5)
+					&.status
+						display flex; align-items center; justify-content space-between;
+						&.pendente
+							color #121341
+						&.cancelada
+							color #868677
+						&.revisao
+							color #e4960f
+						&.reprovada
+							color #9b2239
+						&.aprovado
+							color $dourado
+						&.comprovado
+							color #229b8e
+						&.pago
+							color #6bad1e
+						img
+							height 20px; flex-shrink 0
+	h2
+		color #20334d; font-size rem(31); line-height rem(31); font-weight $font-medium; text-align center;
+		margin-bottom 10px
+	h3
+		color #20334d; font-size rem(18); line-height rem(18); font-weight $font-medium; text-align center;
+		margin-bottom 10px
+	p
+		color #20334d; font-size rem(14); line-height rem(16); margin-bottom 40px; text-align center;
+		.ponto
+			margin 0 40px
+
+
++tablet-768()
+	#listaVpc
+		h2, h3, p
+			padding 0 20px;
+		.saldos
+			flex-flow row wrap; max-width 600px;
+		.container
+			max-width 95%;
+			table
+				tr
+					&.head
+						font-size rem(18)
+					td
+						font-size rem(16); width 25%;
+						padding 10px 5px;
+						&.status
+							width 100%;
+
++mobile-600()
+	#listaVpc
+		h2
+			font-size rem(25)
+		p
+			span
+				display block; margin 5px 0
+			.ponto
+				display none
+		.container
+			table
+				tr
+					display flex; flex-flow row wrap; padding 15px
+					&.head
+						display none
+					&:not(:last-child)
+						border-bottom 1px solid rgba(#0e1a35,0.5)
+						td
+							border-bottom 0
+					td
+						width 100%;
+						&:not(:last-child)
+							border-right 0
+						&:before
+							content: attr(data-label) ; font-size rem(18px); color #0e1a35; margin-right 7px;
+						&.status
+							justify-content: flex-start
+							img
+								margin-left 10px;

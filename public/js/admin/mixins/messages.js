@@ -1,0 +1,1 @@
+var message_mixin={data:function(){return{success:!1,successMessage:"Ação executada com sucesso!",warning:!1,warningMessage:"Aconteceu algum imprevisto.",error:!1,errorMessage:"Ocorreu um erro ao executar a ação!",saved:!1,savedMessage:"Salvo com sucesso",sending:!1,sendingMessage:"Enviando..."}},methods:{}};

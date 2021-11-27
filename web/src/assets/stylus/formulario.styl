@@ -1,0 +1,55 @@
+form
+    position relative; z-index: 2; max-width percentage(450/925); width 100%
+    p, label
+        font-size rem(18); line-height 1.5; color #fff
+        a
+            color #fff
+        &.esqueceu
+            font-size rem(14); text-align right
+    .group
+        display flex; align-items center; justify-content space-between
+        ._70
+            width 69%
+        ._30
+            width 29%
+    .input
+        padding 10px 0; position relative
+        input, select
+            border 1px solid $dourado2; background $azul; color #fff; outline 0;
+            padding 10px; font-size rem(18); line-height 1.5; width 100%
+            &:-webkit-autofill, &:-webkit-autofill:hover, 
+            &:-webkit-autofill:focus, &:-webkit-autofill:active
+                box-shadow: 0 0 0 50px $azul inset !important;
+                -webkit-text-fill-color: #fff !important;
+            &.has-error
+                padding: 10px 10px 20px 10px;
+        .error
+            font-size rem(12); color #f88; position absolute; bottom 12px; right 2px; line-height 1
+            font-weight $font-thin;
+        &.check
+            input
+                width auto;margin 5px;
+            label
+                font-size rem(14);
+            .error
+                position: static;
+    .button
+        text-align center; padding-top 25px
+        button
+            font-size rem(18); line-height 1; letter-spacing letterSpacing(-25);
+            padding 15px 50px; cursor pointer; display inline-block; text-decoration none; color #fff
+            background linear-gradient(120deg, $dourado2, $dourado3, darken($dourado3, 15));
+            background-size 200% 100%; transition all 1s ease
+            &:hover
+                background-position 100%
+
++mobile-600()
+    form
+        max-width 350px;
+
++iphone-x()
+    form
+        .input
+            padding 5px 0
+        .button
+            padding-top 20px
